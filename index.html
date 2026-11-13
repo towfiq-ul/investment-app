@@ -58,6 +58,17 @@
   .hero .copy { padding-bottom:64px; }
   .pills { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
   .pills li { border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:4px 12px; font-size:.85rem; color:#d7e1ee; }
+  .qr { display:flex; align-items:center; gap:16px; margin-top:28px; padding:12px 18px 12px 12px; width:fit-content;
+         background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:16px; text-decoration:none; color:#fff; }
+  .qr:hover, .qr:focus-visible { background:rgba(255,255,255,.14); }
+  .qr .code { width:104px; height:104px; border-radius:10px; background:#fff; padding:4px; flex:none; }
+  .qr strong { display:block; font-size:1.05rem; }
+  .qr span { display:block; color:#cfd9e6; font-size:.88rem; line-height:1.45; }
+  .qr .badge { width:auto; height:54px; margin:2px 0 -8px -8px; padding:0; background:none; border-radius:0; }
+  .play-mobile { display:none; margin-top:20px; }
+  .play-mobile img { height:64px; width:auto; margin-left:-9px; }
+  @media (max-width:700px) { .play-mobile { display:block; } }
+  @media (max-width:700px) { .qr { display:none; } }
   .phone { justify-self:center; width:min(320px,80vw); border-radius:28px 28px 0 0; overflow:hidden;
            box-shadow:0 -10px 60px rgba(0,0,0,.35); border:8px solid #0b1a2f; border-bottom:0; }
   .phone img { aspect-ratio:9/16; object-fit:cover; object-position:top; height:520px; width:100%; }
@@ -96,6 +107,17 @@
   .card h3 { margin:0 0 6px; font-size:1.08rem; }
   .card p { margin:0; color:var(--muted); }
 
+  /* Periods */
+  .periods { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px; }
+  @media (max-width:760px) { .periods { grid-template-columns:1fr; } }
+  .period { background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold); border-radius:14px; padding:20px; }
+  .period h3 { margin:0 0 4px; font-size:1.1rem; color:var(--accent); }
+  .period p { margin:0; color:var(--muted); }
+  .plan { margin-top:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; list-style:none; padding:0; }
+  @media (max-width:760px) { .plan { grid-template-columns:1fr; } }
+  .plan li { display:flex; gap:12px; align-items:flex-start; }
+  .plan li b { flex:none; width:28px; height:28px; border-radius:50%; background:rgba(242,181,68,.2); color:var(--gold);
+               display:flex; align-items:center; justify-content:center; font-size:.9rem; }
   /* Screenshot carousel (circular). Without JS it falls back to a sideways-scrolling strip. */
   .carousel { position:relative; }
   .track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 16px 20px; margin:0 -16px; }
@@ -103,11 +125,13 @@
   .slide img { border-radius:18px; box-shadow:0 18px 40px rgba(15,37,66,.28); aspect-ratio:9/16; width:100%; height:auto; background:var(--navy); }
   .slide figcaption { text-align:center; color:var(--muted); font-size:.95rem; margin-top:12px; font-weight:600; }
   .carousel.on .track { display:block; position:relative; overflow:hidden; height:var(--h,560px); margin:0; padding:0;
-                        touch-action:pan-y; cursor:grab; user-select:none; -webkit-user-select:none; }
+                        touch-action:pan-y; cursor:grab; user-select:none; -webkit-user-select:none;
+                        scroll-snap-type:none; overscroll-behavior:contain; }
   .carousel.on .track.drag { cursor:grabbing; }
   .carousel.on .slide { position:absolute; left:50%; top:0; width:var(--w,270px); margin-left:calc(var(--w,270px) / -2);
                         transition:transform .55s cubic-bezier(.22,.8,.28,1), opacity .55s, filter .55s; will-change:transform; }
   .carousel.on .track.drag .slide { transition:none; }
+  .carousel.on .slide { scroll-snap-align:none; }
   .carousel.on .slide img { pointer-events:none; -webkit-user-drag:none; }
   .carousel.on .slide figcaption { opacity:0; transition:opacity .3s; }
   .carousel.on .slide.active figcaption { opacity:1; }
@@ -169,6 +193,7 @@
   .privacy h2 { color:#fff; }
   .privacy p { color:#d7e1ee; margin:0 0 8px; }
   .privacy a { color:var(--gold); }
+  .privacy a.btn { color:#18365D; text-decoration:none; }
   .privacy .shield { width:72px; height:72px; stroke:var(--gold); fill:none; stroke-width:1.6; }
   @media (max-width:600px) { .privacy { grid-template-columns:1fr; padding:24px; } }
 
@@ -182,7 +207,91 @@
   .cta .btns { justify-content:center; }
   footer { border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); font-size:.92rem; }
   footer .wrap { display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between; }
-  footer a { color:var(--muted); }
+  footer a { color:var(--muted); text-decoration:none; }
+  footer .tm { flex-basis:100%; font-size:.78rem; opacity:.8; }
+  footer a:hover, footer a:focus-visible { color:var(--accent); text-decoration:underline; }
+
+  /* Hero screenshots (circular slider) */
+  .hero { padding:56px 0 48px; }
+  .hero .wrap { align-items:center; }
+  .hero .copy { padding-bottom:0; }
+  .hero-shots { min-width:0; }
+  .hero .slide figcaption { color:#d7e1ee; }
+  .hero .hint { color:#cfd9e6; }
+  .hero .dots button { background:rgba(255,255,255,.3); }
+  .hero .slide img { box-shadow:0 20px 50px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.12); }
+
+  /* Interactive demo */
+  .demo-grid { display:grid; grid-template-columns:1fr 380px; gap:40px; align-items:center; }
+  @media (max-width:860px) { .demo-grid { grid-template-columns:1fr; } }
+  .try { list-style:none; padding:0; margin:0 0 24px; display:grid; gap:12px; }
+  .try li { display:flex; gap:12px; align-items:flex-start; }
+  .try li b { flex:none; width:28px; height:28px; border-radius:50%; background:var(--gold); color:#18365D; display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+  .device { justify-self:center; width:min(380px,100%); background:#0b1a2f; padding:12px; border-radius:36px; box-shadow:0 30px 70px rgba(15,37,66,.35); }
+  .d-app { position:relative; height:680px; max-height:80vh; min-height:520px; background:#F4F6F9; border-radius:26px; overflow:hidden;
+           display:flex; flex-direction:column; color:#111827; font-size:14px; line-height:1.4; }
+  .d-top { display:flex; justify-content:space-between; align-items:center; padding:14px 16px 10px; background:#fff; font-weight:700; color:#18365D; font-size:16px; }
+  .d-av { width:28px; height:28px; border-radius:50%; background:#18365D; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .d-tabs { display:flex; background:#fff; border-bottom:1px solid #E2E6EC; }
+  .d-tabs button { flex:1; border:0; background:none; padding:10px 2px; font:600 12px/1 system-ui,sans-serif; color:#4B5563; cursor:pointer; border-bottom:3px solid transparent; }
+  .d-tabs button[aria-selected="true"] { color:#18365D; border-bottom-color:#18365D; }
+  .d-body { flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:10px; overscroll-behavior:contain; }
+  .d-card { background:#fff; border:1px solid #E2E6EC; border-radius:14px; padding:12px; }
+  .d-card h4 { margin:0 0 2px; font-size:15px; }
+  .d-muted { color:#4B5563; font-size:12px; margin:0 0 8px; }
+  .d-bad { color:#B91C1C; font-size:13px; margin:0; }
+  .up { color:#166534; } .down { color:#B91C1C; }
+  .d-tiles { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .d-tile { background:#fff; border:1px solid #E2E6EC; border-radius:12px; padding:10px; }
+  .d-tl { font-size:11px; color:#4B5563; } .d-tv { font-size:16px; font-weight:700; margin:2px 0; } .d-ts { font-size:11px; color:#4B5563; }
+  .d-legend, .d-who { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; margin-bottom:6px; }
+  .d-app i { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:middle; }
+  .d-chart { width:100%; height:auto; display:block; }
+  .d-chart text { font-size:9px; fill:#4B5563; }
+  .d-hit { cursor:pointer; }
+  .d-bar-detail { display:grid; grid-template-columns:1fr auto; gap:2px 8px; font-size:12px; margin-top:6px; padding-top:6px; border-top:1px solid #E2E6EC; }
+  .d-seg { display:flex; border:1px solid #C5CCD6; border-radius:999px; overflow:hidden; margin:4px 0 6px; }
+  .d-seg button { flex:1; border:0; background:#fff; padding:8px 2px; font:600 12px/1 system-ui,sans-serif; color:#18365D; cursor:pointer; }
+  .d-seg button + button { border-left:1px solid #C5CCD6; }
+  .d-seg button[aria-pressed="true"] { background:#E6ECF4; }
+  .d-period { padding:8px 0; border-top:1px solid #E2E6EC; }
+  .d-prow { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+  .d-pr { text-align:right; } .d-pr small { display:block; font-size:11px; }
+  .d-link { border:0; background:none; color:#18365D; font-weight:700; padding:6px 0 0; cursor:pointer; }
+  .d-row { display:flex; justify-content:space-between; gap:8px; padding:8px 0; border-top:1px solid #E2E6EC; }
+  .d-row:first-of-type { border-top:0; }
+  .d-row small, .d-pay small { display:block; color:#4B5563; font-size:11px; }
+  .d-r { text-align:right; }
+  .d-pay { padding:8px 0; border-top:1px solid #E2E6EC; }
+  .d-line { display:flex; justify-content:space-between; font-size:12px; padding:2px 0; }
+  .d-tot { border-top:1px solid #E2E6EC; margin-top:4px; padding-top:6px; font-weight:700; }
+  .d-card label { display:block; font-size:12px; color:#4B5563; margin:8px 0 0; }
+  .d-card input:not([type=checkbox]), .d-card select { display:block; width:100%; margin-top:4px; padding:10px; border:1px solid #C5CCD6; border-radius:8px;
+           font:15px system-ui,sans-serif; color:#111827; background:#fff; }
+  .d-card input:focus, .d-card select:focus { outline:2px solid #18365D; outline-offset:-1px; }
+  .d-check { display:flex !important; gap:8px; align-items:flex-start; color:#111827 !important; font-size:13px !important; }
+  .d-check small { color:#4B5563; }
+  .d-preview { background:#F4F6F9; border-radius:10px; padding:10px; margin-top:10px; }
+  .d-preview small { color:#4B5563; font-size:11px; }
+  .d-primary { width:100%; margin-top:12px; padding:12px; border:0; border-radius:999px; background:#18365D; color:#fff; font:700 15px system-ui,sans-serif; cursor:pointer; }
+  .d-toast { position:absolute; left:50%; bottom:16px; transform:translate(-50%,20px); background:#111827; color:#fff; padding:8px 14px; border-radius:8px;
+             font-size:13px; opacity:0; transition:opacity .25s, transform .25s; pointer-events:none; white-space:nowrap; max-width:90%; overflow:hidden; text-overflow:ellipsis; }
+  .d-toast.on { opacity:1; transform:translate(-50%,0); }
+
+  /* Download card */
+  .get { padding:0 0 56px; }
+  .get-card { display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center; background:linear-gradient(150deg,var(--navy-2),var(--navy));
+              color:#fff; border-radius:24px; padding:36px; box-shadow:var(--shadow); }
+  .get-card h2 { color:#fff; }
+  .get-copy p { color:#d7e1ee; margin:0 0 12px; max-width:520px; }
+  .get-qr { width:200px; height:200px; background:#fff; border-radius:16px; padding:10px; }
+  .get-badge img { height:72px; width:auto; margin-left:-11px; }
+  .get-beta { display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px; margin-top:16px; padding-top:16px;
+              border-top:1px solid rgba(255,255,255,.15); }
+  .get-beta span { color:#d7e1ee; font-size:.95rem; }
+  .get-beta .btn { text-decoration:none; padding:10px 20px; }
+  @media (max-width:700px) { .get-card { grid-template-columns:1fr; text-align:center; padding:28px 20px; } .get-beta { justify-content:center; }
+    .get-qr { display:none; } .get-copy p { margin-left:auto; margin-right:auto; } .get-badge img { margin:0 auto; } }
 </style>
 </head>
 <body>
@@ -200,11 +309,12 @@
 </svg>Investment</a>
     <nav>
       <a href="#benefits">Benefits</a>
-      <a href="#screens">Screens</a>
+      <a href="#results">Results</a>
+      <a href="#demo">Try it</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="mini" href="invite/tester/">Become a tester</a>
+    <a class="mini" href="invite/tester/">Become a beta user</a>
   </div>
 </header>
 
@@ -212,17 +322,44 @@
   <div class="wrap">
     <div class="copy">
       <h1>Shared investments.<br><em>Fair returns.</em> No spreadsheet.</h1>
-      <p class="lead">Pool money with partners into a bus, a shop or any shared asset. Investment records who put in
-        what and splits every return by each partner's capital on the day it arrives, down to the last paisa.</p>
+      <p class="lead">Track your own investments and your family's, or pool money with partners into a bus, a shop or
+        any shared asset. Investment records who put in what, splits every return fairly down to the last paisa, and
+        shows your profit or loss month by month, half-year by half-year and year by year.</p>
       <div class="btns">
-        <a class="btn gold" href="invite/tester/">Become a tester</a>
+        <a class="btn gold" href="invite/tester/">Become a beta user</a>
         <a class="btn ghost" href="#how">See how it works</a>
       </div>
       <ul class="pills">
         <li>Android 8.0+</li><li>Taka (৳)</li><li>Works offline</li><li>Your data stays yours</li>
       </ul>
+      <a class="play-mobile" href="https://play.google.com/store/apps/details?id=com.advancedinventorybd.investment"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="646" height="250"></a>
+      <a class="qr" href="https://play.google.com/store/apps/details?id=com.advancedinventorybd.investment">
+        <img class="code" src="assets/play-qr.svg" alt="QR code for Investment on Google Play" width="104" height="104">
+        <div>
+          <strong>Scan to download</strong>
+          <span>Point your Android phone's camera<br>at the code to open Google Play.</span>
+          <img class="badge" src="assets/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
+        </div>
+      </a>
     </div>
-    <div class="phone"><img src="assets/screenshots/01-dashboard.webp" alt="Investment dashboard showing capital invested, payouts and monthly income by partner" width="720" height="1280"></div>
+    <div class="hero-shots">
+    <div class="carousel" id="shots" aria-roledescription="carousel" aria-label="App screenshots">
+        <div class="track" tabindex="0">
+          <figure class="slide"><img src="assets/screenshots/01-dashboard.webp" alt="Dashboard" width="720" height="1280"><figcaption>Dashboard</figcaption></figure>
+          <figure class="slide"><img src="assets/screenshots/02-fair-shares.webp" alt="Charts: share of capital vs share of payouts" width="720" height="1280"><figcaption>Fair shares</figcaption></figure>
+          <figure class="slide"><img src="assets/screenshots/03-summary.webp" alt="Summary of partners and payouts" width="720" height="1280"><figcaption>Summary</figcaption></figure>
+          <figure class="slide"><img src="assets/screenshots/04-split-preview.webp" alt="Add return with split preview" width="720" height="1280"><figcaption>Split preview</figcaption></figure>
+          <figure class="slide"><img src="assets/screenshots/05-add-investment.webp" alt="Add investment form" width="720" height="1280"><figcaption>Add investment</figcaption></figure>
+          <figure class="slide"><img src="assets/screenshots/06-drive-backup.webp" alt="Google Drive backup settings" width="720" height="1280"><figcaption>Drive backup</figcaption></figure>
+        </div>
+        <div class="nav">
+          <button class="arrow prev" type="button" aria-label="Previous screenshot">&#8249;</button>
+          <div class="dots" role="tablist" aria-label="Choose screenshot"></div>
+          <button class="arrow next" type="button" aria-label="Next screenshot">&#8250;</button>
+        </div>
+      </div>
+      <p class="hint">Swipe or scroll sideways to see more →</p>
+    </div>
   </div>
 </section>
 
@@ -268,7 +405,7 @@
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div>
         <h3>Exact to the last paisa</h3><p>Amounts are kept in paisa, and rounding is settled so every split adds up to the exact amount received.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-        <h3>See who earns what</h3><p>Dashboard charts show monthly income by partner, capital vs payouts, yield and who owns each investment.</p></div>
+        <h3>See who earns what</h3><p>Charts show income for each person, capital vs payouts, yield and who owns each investment.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h3>Preview before you save</h3><p>Enter a return and see each partner's share instantly, so mistakes are caught before they are recorded.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 9a4.5 4.5 0 0 1-1 9H7z"/><path d="M12 11v6M9 14l3 3 3-3"/></svg></div>
@@ -285,33 +422,62 @@
   </div>
 </section>
 
-<section id="screens">
+<section id="results">
   <div class="wrap">
-    <div class="center">
-      <p class="kicker">Screens</p>
-      <h2>A look inside</h2>
-      <p class="sub">Shown with demo data: three partners sharing two buses.</p>
+    <p class="kicker">Results</p>
+    <h2>Know where you stand. Plan what's next.</h2>
+    <p class="sub">See profit or loss for yourself, each family member and each partner, over the period that matters
+      to you, and compare it with the one before.</p>
+    <div class="periods">
+      <div class="period"><h3>Monthly</h3><p>What every investment earned this month, in total and per person. Spot a slow
+        month straight away.</p></div>
+      <div class="period"><h3>Half-yearly</h3><p>January–June and July–December at a glance, with the change from the half
+        before.</p></div>
+      <div class="period"><h3>Yearly</h3><p>Profit or loss for the whole year, per person. The big picture for family
+        decisions and tax time.</p></div>
     </div>
-    <div class="carousel" id="shots" aria-roledescription="carousel" aria-label="App screenshots">
-      <div class="track" tabindex="0">
-        <figure class="slide"><img src="assets/screenshots/01-dashboard.webp" alt="Dashboard" loading="lazy" width="720" height="1280"><figcaption>Dashboard</figcaption></figure>
-        <figure class="slide"><img src="assets/screenshots/02-fair-shares.webp" alt="Charts: share of capital vs share of payouts" loading="lazy" width="720" height="1280"><figcaption>Fair shares</figcaption></figure>
-        <figure class="slide"><img src="assets/screenshots/03-summary.webp" alt="Summary of partners and payouts" loading="lazy" width="720" height="1280"><figcaption>Summary</figcaption></figure>
-        <figure class="slide"><img src="assets/screenshots/04-split-preview.webp" alt="Add return with split preview" loading="lazy" width="720" height="1280"><figcaption>Split preview</figcaption></figure>
-        <figure class="slide"><img src="assets/screenshots/05-add-investment.webp" alt="Add investment form" loading="lazy" width="720" height="1280"><figcaption>Add investment</figcaption></figure>
-        <figure class="slide"><img src="assets/screenshots/06-drive-backup.webp" alt="Google Drive backup settings" loading="lazy" width="720" height="1280"><figcaption>Drive backup</figcaption></figure>
-      </div>
-      <div class="nav">
-        <button class="arrow prev" type="button" aria-label="Previous screenshot">&#8249;</button>
-        <div class="dots" role="tablist" aria-label="Choose screenshot"></div>
-        <button class="arrow next" type="button" aria-label="Next screenshot">&#8250;</button>
-      </div>
-    </div>
-    <p class="hint">Swipe or scroll sideways to see more →</p>
+    <ul class="plan">
+      <li><b>✓</b><span><strong>Which investment pays best?</strong> Compare yield across buses, shops or property.</span></li>
+      <li><b>✓</b><span><strong>Is it growing?</strong> See whether profit is up or down against the previous period.</span></li>
+      <li><b>✓</b><span><strong>Where next?</strong> Put the next taka where it works hardest, with real numbers behind it.</span></li>
+    </ul>
   </div>
 </section>
 
-<section class="alt" id="how">
+<section class="alt" id="demo">
+  <div class="wrap demo-grid">
+    <div class="demo-copy">
+      <p class="kicker">Try it</p>
+      <h2>Play with the app right here</h2>
+      <p class="sub">This is a working demo with example data: Arif, Nadia and Samir sharing two buses. Change anything;
+        it all stays in this page.</p>
+      <ul class="try">
+        <li><b>1</b><span>On <strong>Dashboard</strong>, tap a bar in the chart and switch <strong>Monthly / Half-yearly / Yearly</strong>.</span></li>
+        <li><b>2</b><span>Open <strong>Return</strong>, type an amount and watch each partner's share update as you type.</span></li>
+        <li><b>3</b><span>Tick <strong>With capital</strong> to see how selling an asset pays everyone back, profit or loss.</span></li>
+        <li><b>4</b><span>On <strong>Investment</strong>, pick <strong>+ New investment…</strong> (or a new partner), save, then add a
+          <strong>Return</strong> to it.</span></li>
+        <li><b>5</b><span>Check <strong>Summary</strong> for each partner's payouts and ROI.</span></li>
+      </ul>
+      <button type="button" class="btn navy" data-reset>Reset the demo</button>
+    </div>
+    <div class="device">
+      <div class="d-app" id="demo-app" aria-label="Interactive demo of the Investment app">
+        <div class="d-top"><span>Investment</span><span class="d-av">A</span></div>
+        <div class="d-tabs" role="tablist">
+          <button type="button" role="tab" data-tab="dash" aria-selected="true">Dashboard</button>
+          <button type="button" role="tab" data-tab="sum">Summary</button>
+          <button type="button" role="tab" data-tab="inv">Investment</button>
+          <button type="button" role="tab" data-tab="ret">Return</button>
+        </div>
+        <div class="d-body"><noscript><p class="d-muted">Turn on JavaScript to try the demo.</p></noscript></div>
+        <div class="d-toast" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
   <div class="wrap">
     <p class="kicker">How it works</p>
     <h2>Up and running in five minutes</h2>
@@ -323,6 +489,15 @@
       <li><h3>Close an investment when it ends</h3><p>Tick "With capital" on the final return. Everyone gets their capital back plus their share of profit, and the investment is locked.</p></li>
       <li><h3>Check the numbers anytime</h3><p>Dashboard for the big picture, Summary for every partner and every payout. Tap any entry to edit or delete it safely.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="cta alt">
+  <div class="wrap">
+    <h2>Help shape Investment</h2>
+    <p class="sub" style="margin-left:auto;margin-right:auto">Investment is in early access on Google Play. Join as a beta user, try it with your own
+      partnership, and tell us what you think.</p>
+    <div class="btns"><a class="btn navy" href="invite/tester/">Become a beta user</a></div>
   </div>
 </section>
 
@@ -354,7 +529,7 @@
     <h2>Anyone who invests together</h2>
     <p class="sub">If more than one person puts money into the same thing, Investment keeps it fair.</p>
     <ul class="who">
-      <li>🚌 Bus &amp; transport owners</li><li>🏪 Shop &amp; small business partners</li><li>👨‍👩‍👧 Family investments</li>
+      <li>🚌 Bus &amp; transport owners</li><li>🏪 Shop &amp; small business partners</li><li>👨‍👩‍👧 Families tracking their investments</li>
       <li>🤝 Friends pooling money</li><li>🏠 Shared property &amp; rentals</li><li>🚜 Farm &amp; equipment co-owners</li>
     </ul>
   </div>
@@ -368,7 +543,7 @@
         <h2>Your money, your data</h2>
         <p>Records stay on your phone. Backups go to <strong>your own</strong> Google Drive, and the app can only see the
           file it creates there. No ads, no tracking, and the developer never receives your data.</p>
-        <p><a href="privacy-policy/">Read the privacy policy →</a></p>
+        <p style="margin-top:16px"><a class="btn gold" href="privacy-policy/">Check Privacy Policy</a></p>
       </div>
     </div>
   </div>
@@ -380,6 +555,10 @@
     <h2>Questions</h2>
     <div style="margin-top:20px">
       <details><summary>Is it free?</summary><p>Yes. Investment is free to download and use, and it will stay free.</p></details>
+      <details><summary>Can I track my family's investments too?</summary><p>Yes. Add each family member as a partner and record
+        what they put in. The app shows each person's capital, payouts and return, and splits every return between them fairly.</p></details>
+      <details><summary>Can I see monthly, half-yearly and yearly results?</summary><p>Yes. The Dashboard shows profit or loss for each
+        month, half-year (January–June, July–December) and year, in total and per person, with the change from the period before.</p></details>
       <details><summary>Is there an iPhone version?</summary><p>Not yet. Investment is for Android phones (Android 8.0 or newer).</p></details>
       <details><summary>What happens if I lose my phone?</summary><p>Install the app on your new phone, sign in with the same Google account and restore your backup from Google Drive in one tap.</p></details>
       <details><summary>Can the developer see my data?</summary><p>No. The developer runs no servers. Your data is on your phone and in your own Google Drive only.</p></details>
@@ -387,20 +566,29 @@
   </div>
 </section>
 
-<section class="cta">
+
+<section class="get">
   <div class="wrap">
-    <h2>Help shape Investment</h2>
-    <p class="sub" style="margin-left:auto;margin-right:auto">The app is in closed testing on Google Play. Join as a tester, try it with your own
-      partnership, and tell us what you think.</p>
-    <div class="btns"><a class="btn navy" href="invite/tester/">Become a tester</a></div>
+    <div class="get-card">
+      <img class="get-qr" src="assets/play-qr.svg" alt="QR code for Investment on Google Play" width="200" height="200">
+      <div class="get-copy">
+        <p class="kicker">Download</p>
+        <h2>Get Investment on Google Play</h2>
+        <p>Scan the code with your Android phone's camera, or tap the badge on your phone. Free, and it stays free.</p>
+        <a class="get-badge" href="https://play.google.com/store/apps/details?id=com.advancedinventorybd.investment"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="646" height="250"></a>
+        <div class="get-beta">
+          <span>Now in early access. Become a beta user to download it first.</span>
+          <a class="btn gold" href="invite/tester/">Become a beta user</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>Investment · Android app</span>
-    <span><a href="invite/tester/">Become a tester</a> · <a href="privacy-policy/">Privacy policy</a> ·
-      <a href="mailto:towfiq106@gmail.com">towfiq106@gmail.com</a></span>
+    <small class="tm">Google Play and the Google Play logo are trademarks of Google LLC.</small>
   </div>
 </footer>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
@@ -419,12 +607,13 @@
   var n = slides.length, cur = 0, timer = null, dragX = null, dragDx = 0, downSlide = -1;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   root.classList.add('on');
+  track.addEventListener('scroll', function () { if (track.scrollLeft || track.scrollTop) { track.scrollLeft = 0; track.scrollTop = 0; } });
 
   slides.forEach(function (s, i) {
     var b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('aria-label', 'Screenshot ' + (i + 1) + ': ' + s.querySelector('figcaption').textContent);
-    b.addEventListener('click', function () { go(i); restart(); });
+    b.addEventListener('click', function () { walkTo(i); restart(); });
     dotsBox.appendChild(b);
 
   });
@@ -439,23 +628,52 @@
   }
 
   // Offset of slide i from the current one, wrapped to -n/2..n/2 so the ring has no ends.
+  // Always in (-n/2, n/2]: the slide opposite the current one sits on one fixed side.
   function offset(i) {
-    var o = (i - cur) % n;
+    var o = (((i - cur) % n) + n) % n;
     if (o > n / 2) o -= n;
-    if (o < -n / 2) o += n;
     return o;
+  }
+  var lastO = [], lastCur = null, knownTurn = null;
+
+  function place(s, o) {
+    var w = parseFloat(getComputedStyle(root).getPropertyValue('--w')) || 270, a = Math.abs(o);
+    var x = o * w * 0.62, sc = Math.max(0.55, 1 - a * 0.17), ry = Math.max(-40, Math.min(40, -o * 22));
+    s.style.transform = 'translateX(' + x + 'px) perspective(1000px) rotateY(' + ry + 'deg) scale(' + sc + ')';
+    s.style.zIndex = String(100 - Math.round(a * 10));
+    s.style.opacity = a > 2.6 ? '0' : String(Math.max(0, 1 - a * 0.22));
+    s.style.filter = a > 0.5 ? 'saturate(.7) brightness(.92)' : 'none';
   }
 
   function render() {
     var w = parseFloat(getComputedStyle(root).getPropertyValue('--w')) || 270;
     var drag = dragX === null ? 0 : dragDx / w;
+    // How far the ring turned since the last render, the short way round.
+    var turn = 0;
+    if (lastCur !== null) {
+      if (knownTurn !== null) turn = knownTurn; // arrows, swipes and dot steps know their direction
+      else { turn = (((cur - lastCur) % n) + n) % n; if (turn > n / 2) turn -= n; }
+    }
+    knownTurn = null;
+    lastCur = cur;
     slides.forEach(function (s, i) {
-      var o = offset(i) + drag, a = Math.abs(o);
-      var x = o * w * 0.62, sc = Math.max(0.55, 1 - a * 0.17), ry = Math.max(-40, Math.min(40, -o * 22));
-      s.style.transform = 'translateX(' + x + 'px) perspective(1000px) rotateY(' + ry + 'deg) scale(' + sc + ')';
-      s.style.zIndex = String(100 - Math.round(a * 10));
-      s.style.opacity = a > 2.6 ? '0' : String(1 - a * 0.22);
-      s.style.filter = a > 0.5 ? 'saturate(.7) brightness(.92)' : 'none';
+      // `base` is where the slide rests in the ring; the finger's drag offset is added on top.
+      var base = offset(i);
+      var expected = lastO[i] === undefined ? base : lastO[i] - turn;
+      if (Math.abs(base - expected) > n / 2) {
+        // This slide went round the back of the ring.
+        if (Math.abs(expected) <= n / 2 + 1.01) {
+          base = expected; // keep sliding outward past the edge on its old side while it fades out
+        } else {
+          // Coming in on the other side: start from the hidden spot at the back, then slide in.
+          s.style.transition = 'none';
+          place(s, (base >= 0 ? 1 : -1) * n / 2 + drag);
+          void s.offsetWidth;
+          s.style.transition = '';
+        }
+      }
+      lastO[i] = base;
+      place(s, base + drag);
       var on = i === cur;
       s.classList.toggle('active', on);
       s.setAttribute('aria-hidden', on ? 'false' : 'true');
@@ -463,9 +681,26 @@
     });
   }
 
-  function go(i) { cur = ((i % n) + n) % n; render(); }
-  function next() { go(cur + 1); }
-  function prev() { go(cur - 1); }
+
+  function go(i, dir) {
+    clearTimeout(walkTimer);
+    knownTurn = dir === undefined ? null : dir;
+    cur = ((i % n) + n) % n; render();
+  }
+  // Turn the ring one slide at a time towards i (short way round), so a far jump still rotates smoothly.
+  var walkTimer = null;
+  function walkTo(i) {
+    clearTimeout(walkTimer);
+    var d = (((i - cur) % n) + n) % n; if (d > n / 2) d -= n;
+    (function stepOnce() {
+      if (d === 0) return;
+      var dir = d > 0 ? 1 : -1;
+      knownTurn = dir; cur = (((cur + dir) % n) + n) % n; d -= dir; render();
+      if (d !== 0) walkTimer = setTimeout(stepOnce, 170);
+    })();
+  }
+  function next() { go(cur + 1, 1); }
+  function prev() { go(cur - 1, -1); }
   function stop() { clearInterval(timer); timer = null; }
   function restart() { stop(); if (!reduce && (!lb || lb.hidden)) timer = setInterval(next, 3500); }
 
@@ -499,7 +734,7 @@
     var steps = Math.round(-dragDx / (w * 0.62));
     if (steps === 0 && Math.abs(dragDx) > 40) steps = dragDx < 0 ? 1 : -1;
     dragX = null; track.classList.remove('drag');
-    go(cur + steps); restart();
+    go(cur + steps, steps); restart();
   }
   track.addEventListener('pointerup', end);
   track.addEventListener('pointercancel', function () {
@@ -557,5 +792,6 @@
   restart();
 })();
 </script>
+<script src="assets/demo.js" defer></script>
 </body>
 </html>
