@@ -3,49 +3,193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Investment – Android app</title>
+<title>Investment – Split partner profits fairly</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%226%206%2052%2052%22%20width%3D%22512%22%20height%3D%22512%22%3E%0A%20%20%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%2252%22%20height%3D%2252%22%20rx%3D%2212%22%20fill%3D%22%2318365D%22/%3E%0A%20%20%3Cpath%20d%3D%22M14%2010.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM23%209.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM31%2015.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM53%2010.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM19%2021.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM28%2027.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM11%2023.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM52%2026.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM48%2036.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM24%2034.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM43%2047.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM52%2046.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6zM18%2050.7c0%200-1.35%201.7-1.35%202.6a1.35%201.35%200%200%200%202.7%200c0-.9-1.35-2.6-1.35-2.6z%22%20fill%3D%22%23FFFFFF%22%20fill-opacity%3D%220.75%22/%3E%0A%20%20%3Cellipse%20cx%3D%2212.5%22%20cy%3D%2240%22%20rx%3D%223.6%22%20ry%3D%222.5%22%20transform%3D%22rotate%28-30%2012.5%2040%29%22%20fill%3D%22%23F2B544%22/%3E%0A%20%20%3Cpath%20d%3D%22M13%2039C14%2050%2028%2052%2033%2041S37%2027%2042%2024%22%20fill%3D%22none%22%20stroke%3D%22%23F2B544%22%20stroke-width%3D%223.5%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Ccircle%20cx%3D%2242%22%20cy%3D%2224%22%20r%3D%225%22%20fill%3D%22%23F2B544%22/%3E%0A%20%20%3Ccircle%20cx%3D%2242%22%20cy%3D%2224%22%20r%3D%222.4%22%20fill%3D%22none%22%20stroke%3D%22%2318365D%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%2018.5c-4%200-7-2.5-7-6.5%204%200%207%202.5%207%206.5zM42%2017.5c0-4%203-6.5%207-6.5%200%204-3%206.5-7%206.5z%22%20fill%3D%22%23F2B544%22/%3E%0A%3C/svg%3E">
-<meta name="description" content="Investment: an Android app that tracks money invested with partners and splits the returns fairly.">
+<meta name="description" content="Investment is an Android app for partners who pool money into shared investments. Record who put in what, and every return is split fairly — to the last paisa.">
+<meta property="og:title" content="Investment – Split partner profits fairly">
+<meta property="og:description" content="Record who put in what. Every return is split by each partner's capital on the day it arrives — to the last paisa.">
+<meta property="og:image" content="https://towfiq-ul.github.io/investment-app/assets/feature-graphic.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg:#ffffff; --ink:#1b2430; --muted:#5b6675; --accent:#18365D; --gold:#F2B544; --line:#e3e7ec;
-           --card:#f6f8fb; --btn-ink:#ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#10161f; --ink:#e6ebf1; --muted:#9aa6b4; --accent:#8fb3e3; --line:#253142;
-             --card:#161f2b; --btn-ink:#10161f; }
+  :root {
+    --navy:#18365D; --navy-2:#0f2542; --gold:#F2B544;
+    --bg:#ffffff; --bg-2:#f4f7fb; --ink:#1b2430; --muted:#5b6675; --line:#e3e7ec;
+    --card:#ffffff; --accent:#18365D; --shadow:0 10px 30px rgba(15,37,66,.10);
   }
-  html { -webkit-text-size-adjust:100%; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#10161f; --bg-2:#141c27; --ink:#e6ebf1; --muted:#9aa6b4; --line:#253142;
+            --card:#18212e; --accent:#8fb3e3; --shadow:0 10px 30px rgba(0,0,0,.35); }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:72px; }
   body { margin:0; background:var(--bg); color:var(--ink);
          font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
-  .brand { display:flex; align-items:center; gap:16px; border-bottom:3px solid var(--gold); padding-bottom:12px; }
-  .logo { flex:none; width:64px; height:64px; }
-  .app { color:var(--muted); font-size:.95rem; margin:0; }
-  h1 { color:var(--accent); font-size:1.9rem; margin:0; line-height:1.2; }
-  h2 { color:var(--accent); font-size:1.2rem; margin:32px 0 8px; }
-  .lead { font-size:1.05rem; margin:20px 0 8px; }
   a { color:var(--accent); }
-  .box { border:1px solid var(--line); border-left:4px solid var(--gold); padding:12px 16px; border-radius:6px; }
-  ol.steps { list-style:none; counter-reset:step; padding:0; margin:16px 0 0; }
-  ol.steps > li { counter-increment:step; position:relative; padding:16px 16px 16px 64px; margin:0 0 12px;
-                   background:var(--card); border:1px solid var(--line); border-radius:10px; }
-  ol.steps > li::before { content:counter(step); position:absolute; left:16px; top:16px; width:32px; height:32px;
-                           border-radius:50%; background:var(--gold); color:#18365D; font-weight:700;
-                           display:flex; align-items:center; justify-content:center; }
-  ol.steps h3 { margin:0 0 4px; font-size:1.05rem; line-height:1.4; }
-  ol.steps p { margin:4px 0; }
-  .btn { display:inline-block; margin-top:8px; padding:10px 18px; border-radius:8px; background:var(--accent);
-          color:var(--btn-ink); font-weight:600; text-decoration:none; }
-  .btn:hover, .btn:focus-visible { filter:brightness(1.1); }
-  .small { color:var(--muted); font-size:.92rem; }
-  code { word-break:break-all; }
-  ul { padding-left:22px; }
-  footer { margin-top:40px; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 16px; }
+  section { padding:64px 0; }
+  .alt { background:var(--bg-2); }
+  h2 { font-size:clamp(1.6rem,3.5vw,2.1rem); line-height:1.2; margin:0 0 8px; color:var(--accent); }
+  .kicker { color:var(--gold); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; margin:0 0 6px; }
+  .sub { color:var(--muted); max-width:640px; margin:0 0 32px; font-size:1.05rem; }
+  .center { text-align:center; } .center .sub { margin-left:auto; margin-right:auto; }
+
+  /* Top bar */
+  .bar { background:rgba(15,37,66,.92); position:sticky; top:0; z-index:1000;
+          -webkit-backdrop-filter:saturate(1.4) blur(10px); backdrop-filter:saturate(1.4) blur(10px);
+          box-shadow:0 1px 0 rgba(255,255,255,.06), 0 6px 20px rgba(0,0,0,.18); }
+  .bar .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; height:60px; }
+  .bar .name { display:flex; align-items:center; gap:10px; color:#fff; font-weight:700; text-decoration:none; font-size:1.1rem; }
+  .bar .name svg { width:32px; height:32px; }
+  .bar nav { display:flex; gap:20px; }
+  .bar nav a { color:#cfd9e6; text-decoration:none; font-size:.95rem; }
+  .bar nav a:hover { color:#fff; }
+  .bar .mini { display:none; background:var(--gold); color:#18365D; font-weight:700; font-size:.88rem;
+               padding:7px 14px; border-radius:8px; text-decoration:none; }
+  @media (max-width:700px) { .bar nav { display:none; } .bar .mini { display:inline-block; } }
+
+  /* Hero */
+  .hero { background:linear-gradient(160deg,var(--navy-2),var(--navy) 60%,#1f4677); color:#fff; padding:56px 0 0; overflow:hidden; }
+  .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:end; }
+  .hero h1 { font-size:clamp(2.1rem,5.2vw,3.3rem); line-height:1.1; margin:0 0 16px; }
+  .hero h1 em { font-style:normal; color:var(--gold); }
+  .hero p.lead { font-size:1.15rem; color:#d7e1ee; margin:0 0 28px; max-width:520px; }
+  .hero .copy { padding-bottom:64px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
+  .pills li { border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:4px 12px; font-size:.85rem; color:#d7e1ee; }
+  .phone { justify-self:center; width:min(320px,80vw); border-radius:28px 28px 0 0; overflow:hidden;
+           box-shadow:0 -10px 60px rgba(0,0,0,.35); border:8px solid #0b1a2f; border-bottom:0; }
+  .phone img { aspect-ratio:9/16; object-fit:cover; object-position:top; height:520px; width:100%; }
+  @media (max-width:820px) {
+    .hero .wrap { grid-template-columns:1fr; }
+    .hero .copy { padding-bottom:8px; }
+    .phone img { height:420px; }
+  }
+
+  .btns { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:10px; font-weight:700;
+         text-decoration:none; border:2px solid transparent; }
+  .btn.gold { background:var(--gold); color:#18365D; }
+  .btn.ghost { border-color:rgba(255,255,255,.4); color:#fff; }
+  .btn.navy { background:var(--navy); color:#fff; }
+  .btn:hover, .btn:focus-visible { filter:brightness(1.07); }
+
+  /* Problem / solution */
+  .split { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .panel { border-radius:14px; padding:24px; border:1px solid var(--line); background:var(--card); }
+  .panel h3 { margin:0 0 12px; font-size:1.15rem; }
+  .panel ul { margin:0; padding-left:20px; }
+  .panel li { margin:6px 0; }
+  .panel.before h3 { color:#c2410c; }
+  .panel.after { border-color:var(--gold); border-width:2px; }
+  .panel.after h3 { color:var(--accent); }
+  @media (max-width:760px) { .split { grid-template-columns:1fr; } }
+
+  /* Benefits */
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--shadow); }
+  .card .ic { width:44px; height:44px; border-radius:12px; background:rgba(242,181,68,.18); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+  .card .ic svg { width:24px; height:24px; stroke:var(--gold); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .card h3 { margin:0 0 6px; font-size:1.08rem; }
+  .card p { margin:0; color:var(--muted); }
+
+  /* Screenshot carousel (circular). Without JS it falls back to a sideways-scrolling strip. */
+  .carousel { position:relative; }
+  .track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 16px 20px; margin:0 -16px; }
+  .slide { flex:0 0 auto; width:min(250px,68vw); margin:0; scroll-snap-align:center; }
+  .slide img { border-radius:18px; box-shadow:0 18px 40px rgba(15,37,66,.28); aspect-ratio:9/16; width:100%; height:auto; background:var(--navy); }
+  .slide figcaption { text-align:center; color:var(--muted); font-size:.95rem; margin-top:12px; font-weight:600; }
+  .carousel.on .track { display:block; position:relative; overflow:hidden; height:var(--h,560px); margin:0; padding:0;
+                        touch-action:pan-y; cursor:grab; user-select:none; -webkit-user-select:none; }
+  .carousel.on .track.drag { cursor:grabbing; }
+  .carousel.on .slide { position:absolute; left:50%; top:0; width:var(--w,270px); margin-left:calc(var(--w,270px) / -2);
+                        transition:transform .55s cubic-bezier(.22,.8,.28,1), opacity .55s, filter .55s; will-change:transform; }
+  .carousel.on .track.drag .slide { transition:none; }
+  .carousel.on .slide img { pointer-events:none; -webkit-user-drag:none; }
+  .carousel.on .slide figcaption { opacity:0; transition:opacity .3s; }
+  .carousel.on .slide.active figcaption { opacity:1; }
+  .nav { display:none; }
+  .carousel.on .nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:8px; }
+  .arrow { width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--accent);
+           font-size:1.3rem; line-height:1; cursor:pointer; box-shadow:var(--shadow); display:flex; align-items:center; justify-content:center; }
+  .arrow:hover, .arrow:focus-visible { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .dots { display:flex; gap:8px; }
+  .dots button { width:10px; height:10px; border-radius:999px; border:0; padding:0; background:var(--line); cursor:pointer; transition:width .3s, background .3s; }
+  .dots button[aria-current="true"] { width:28px; background:var(--gold); }
+  .hint { color:var(--muted); font-size:.85rem; text-align:center; margin:0; }
+  .carousel.on + .hint { display:none; }
+  /* Lightbox: full-size screenshot */
+  .carousel.on .slide.active { cursor:zoom-in; }
+  .lb { position:fixed; inset:0; z-index:2000; display:none; align-items:center; justify-content:center;
+        background:rgba(6,14,26,.88); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); padding:16px; }
+  .lb.open { display:flex; animation:lbIn .2s ease-out; }
+  @keyframes lbIn { from { opacity:0; } to { opacity:1; } }
+  .lb figure { margin:0; display:flex; flex-direction:column; align-items:center; gap:10px; max-height:100%; }
+  .lb img { max-height:calc(100vh - 90px); max-height:calc(100dvh - 90px); max-width:min(92vw,560px); width:auto; height:auto;
+            border-radius:18px; box-shadow:0 20px 60px rgba(0,0,0,.5); touch-action:pan-y; }
+  .lb figcaption { color:#e6ebf1; font-weight:600; }
+  .lb button { position:absolute; width:48px; height:48px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+               background:rgba(255,255,255,.1); color:#fff; font-size:1.5rem; line-height:1; cursor:pointer;
+               display:flex; align-items:center; justify-content:center; }
+  .lb button:hover, .lb button:focus-visible { background:var(--gold); color:#18365D; border-color:var(--gold); }
+  .lb .x { top:16px; right:16px; font-size:1.2rem; }
+  .lb .lp { left:16px; top:50%; transform:translateY(-50%); }
+  .lb .ln { right:16px; top:50%; transform:translateY(-50%); }
+  @media (max-width:600px) { .lb .lp, .lb .ln { top:auto; bottom:16px; transform:none; } .lb img { max-height:calc(100dvh - 150px); } }
+  body.lb-lock { overflow:hidden; }
+
+  /* Steps */
+  .steps { list-style:none; counter-reset:s; padding:0; margin:0; display:grid; gap:14px; }
+  .steps li { counter-increment:s; position:relative; background:var(--card); border:1px solid var(--line);
+              border-radius:14px; padding:18px 18px 18px 72px; }
+  .steps li::before { content:counter(s); position:absolute; left:18px; top:18px; width:38px; height:38px; border-radius:50%;
+                      background:var(--navy); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  @media (prefers-color-scheme: dark) { .steps li::before { background:var(--gold); color:#18365D; } }
+  .steps h3 { margin:0 0 4px; font-size:1.05rem; }
+  .steps p { margin:0; color:var(--muted); }
+
+  /* Example */
+  .example { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; }
+  @media (max-width:760px) { .example { grid-template-columns:1fr; } }
+  table { width:100%; border-collapse:collapse; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--line); }
+  th, td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; font-size:.9rem; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+  tfoot td { font-weight:700; border-bottom:0; }
+
+  /* Who */
+  .who { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:0; list-style:none; margin:0; }
+  .who li { background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 16px; }
+
+  /* Privacy */
+  .privacy { background:var(--navy); color:#fff; border-radius:18px; padding:32px; display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center; }
+  .privacy h2 { color:#fff; }
+  .privacy p { color:#d7e1ee; margin:0 0 8px; }
+  .privacy a { color:var(--gold); }
+  .privacy .shield { width:72px; height:72px; stroke:var(--gold); fill:none; stroke-width:1.6; }
+  @media (max-width:600px) { .privacy { grid-template-columns:1fr; padding:24px; } }
+
+  /* FAQ */
+  details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:0 0 10px; }
+  summary { cursor:pointer; font-weight:600; }
+  details p { margin:8px 0 0; color:var(--muted); }
+
+  /* CTA + footer */
+  .cta { text-align:center; }
+  .cta .btns { justify-content:center; }
+  footer { border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); font-size:.92rem; }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between; }
+  footer a { color:var(--muted); }
 </style>
 </head>
 <body>
-<main>
-<header class="brand">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" width="64" height="64" role="img" aria-label="Investment app logo" class="logo">
+
+<header class="bar">
+  <div class="wrap">
+    <a class="name" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" role="img" aria-label="Investment app logo">
   <rect x="6" y="6" width="52" height="52" rx="12" fill="#18365D"/>
   <path d="M14 10.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM23 9.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM31 15.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM53 10.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM19 21.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM28 27.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM11 23.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM52 26.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM48 36.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM24 34.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM43 47.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM52 46.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6zM18 50.7c0 0-1.35 1.7-1.35 2.6a1.35 1.35 0 0 0 2.7 0c0-.9-1.35-2.6-1.35-2.6z" fill="#FFFFFF" fill-opacity="0.75"/>
   <ellipse cx="12.5" cy="40" rx="3.6" ry="2.5" transform="rotate(-30 12.5 40)" fill="#F2B544"/>
@@ -53,24 +197,365 @@
   <circle cx="42" cy="24" r="5" fill="#F2B544"/>
   <circle cx="42" cy="24" r="2.4" fill="none" stroke="#18365D" stroke-width="1.4"/>
   <path d="M42 18.5c-4 0-7-2.5-7-6.5 4 0 7 2.5 7 6.5zM42 17.5c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" fill="#F2B544"/>
-</svg>
-<div><p class="app">Android app</p><h1>Investment</h1></div>
+</svg>Investment</a>
+    <nav>
+      <a href="#benefits">Benefits</a>
+      <a href="#screens">Screens</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="mini" href="invite/tester/">Become a tester</a>
+  </div>
 </header>
 
-<p class="lead">Keep track of money invested with partners and split the returns fairly. Records stay on your
-phone, with optional backup to your own Google Drive.</p>
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <h1>Shared investments.<br><em>Fair returns.</em> No spreadsheet.</h1>
+      <p class="lead">Pool money with partners into a bus, a shop or any shared asset. Investment records who put in
+        what and splits every return by each partner's capital on the day it arrives, down to the last paisa.</p>
+      <div class="btns">
+        <a class="btn gold" href="invite/tester/">Become a tester</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+      <ul class="pills">
+        <li>Android 8.0+</li><li>Taka (৳)</li><li>Works offline</li><li>Your data stays yours</li>
+      </ul>
+    </div>
+    <div class="phone"><img src="assets/screenshots/01-dashboard.webp" alt="Investment dashboard showing capital invested, payouts and monthly income by partner" width="720" height="1280"></div>
+  </div>
+</section>
 
-<p class="box">The app is in closed testing on Google Play. Want to try it before it goes public?</p>
-<a class="btn" href="invite/tester/">Become a tester</a>
+<section>
+  <div class="wrap">
+    <p class="kicker">Why Investment</p>
+    <h2>Partnership money gets messy fast</h2>
+    <p class="sub">Partners join at different times, put in different amounts, and returns arrive month after month.
+      A spreadsheet can't keep up for long.</p>
+    <div class="split">
+      <div class="panel before">
+        <h3>Without the app</h3>
+        <ul>
+          <li>Formulas break quietly and nobody notices</li>
+          <li>Later partners get a cut of income from before they joined</li>
+          <li>Splits are off by a few paisa and never add up</li>
+          <li>Arguments over "who is owed what"</li>
+          <li>One lost phone or laptop and the records are gone</li>
+        </ul>
+      </div>
+      <div class="panel after">
+        <h3>With Investment</h3>
+        <ul>
+          <li>Rules are built in and checked; bad entries are rejected</li>
+          <li>Each return is split by the capital held <strong>on the day it was received</strong></li>
+          <li>Every split adds up exactly to the amount received</li>
+          <li>Everyone can see their capital, payouts and yield</li>
+          <li>Automatic backup to your own Google Drive</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Links</h2>
-<ul>
-  <li><a href="invite/tester/">Become a tester</a></li>
-  <li><a href="privacy-policy/">Privacy policy</a></li>
-  <li>Contact: <a href="mailto:towfiq106@gmail.com">towfiq106@gmail.com</a></li>
-</ul>
+<section class="alt" id="benefits">
+  <div class="wrap">
+    <p class="kicker">Benefits</p>
+    <h2>Everything a partnership needs, nothing it doesn't</h2>
+    <p class="sub">Built for small groups who run real investments together: simple to use, strict about the numbers.</p>
+    <div class="grid">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5M4 14h6M14 14h6"/><path d="M4 14l3-6 3 6M14 14l3-6 3 6"/></svg></div>
+        <h3>Fair shares, automatically</h3><p>Each partner gets their share of a return based on the capital they had in that investment on the day it arrived.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div>
+        <h3>Exact to the last paisa</h3><p>Amounts are kept in paisa, and rounding is settled so every split adds up to the exact amount received.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>See who earns what</h3><p>Dashboard charts show monthly income by partner, capital vs payouts, yield and who owns each investment.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Preview before you save</h3><p>Enter a return and see each partner's share instantly, so mistakes are caught before they are recorded.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 9a4.5 4.5 0 0 1-1 9H7z"/><path d="M12 11v6M9 14l3 3 3-3"/></svg></div>
+        <h3>Backed up to your Drive</h3><p>Every change is backed up to your own Google Drive. New phone? Sign in and restore in one tap.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Bring your spreadsheet</h3><p>Import an existing Excel file or Google Sheet. You see a preview first, and duplicates are skipped.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6.5L12 15.5 6 19l1.5-6.5L3 8.5 9 8z"/></svg></div>
+        <h3>Close an investment cleanly</h3><p>Sold the asset? A "with capital" return pays everyone's capital back plus profit, then locks the investment.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 11c0-2 1-3 3-3M8 12c0-3 2-6 6-6 3 0 5 2 5 5M6 15c0-2 0-4 1-5M17 14c0 3-1 5-3 7M12 14c0 3-1 5-2 7M9 20c1-2 1-4 1-6"/></svg></div>
+        <h3>Fingerprint lock</h3><p>Optional lock with your fingerprint or phone PIN keeps your financial records private.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Works offline</h3><p>Everything is stored on your phone, so the app works anywhere. Backup catches up when you're online.</p></div>
+    </div>
+  </div>
+</section>
 
-<footer>Investment · <code>com.advancedinventorybd.investment</code></footer>
-</main>
+<section id="screens">
+  <div class="wrap">
+    <div class="center">
+      <p class="kicker">Screens</p>
+      <h2>A look inside</h2>
+      <p class="sub">Shown with demo data: three partners sharing two buses.</p>
+    </div>
+    <div class="carousel" id="shots" aria-roledescription="carousel" aria-label="App screenshots">
+      <div class="track" tabindex="0">
+        <figure class="slide"><img src="assets/screenshots/01-dashboard.webp" alt="Dashboard" loading="lazy" width="720" height="1280"><figcaption>Dashboard</figcaption></figure>
+        <figure class="slide"><img src="assets/screenshots/02-fair-shares.webp" alt="Charts: share of capital vs share of payouts" loading="lazy" width="720" height="1280"><figcaption>Fair shares</figcaption></figure>
+        <figure class="slide"><img src="assets/screenshots/03-summary.webp" alt="Summary of partners and payouts" loading="lazy" width="720" height="1280"><figcaption>Summary</figcaption></figure>
+        <figure class="slide"><img src="assets/screenshots/04-split-preview.webp" alt="Add return with split preview" loading="lazy" width="720" height="1280"><figcaption>Split preview</figcaption></figure>
+        <figure class="slide"><img src="assets/screenshots/05-add-investment.webp" alt="Add investment form" loading="lazy" width="720" height="1280"><figcaption>Add investment</figcaption></figure>
+        <figure class="slide"><img src="assets/screenshots/06-drive-backup.webp" alt="Google Drive backup settings" loading="lazy" width="720" height="1280"><figcaption>Drive backup</figcaption></figure>
+      </div>
+      <div class="nav">
+        <button class="arrow prev" type="button" aria-label="Previous screenshot">&#8249;</button>
+        <div class="dots" role="tablist" aria-label="Choose screenshot"></div>
+        <button class="arrow next" type="button" aria-label="Next screenshot">&#8250;</button>
+      </div>
+    </div>
+    <p class="hint">Swipe or scroll sideways to see more →</p>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>Up and running in five minutes</h2>
+    <p class="sub">No setup, no account to create. Just your Google account.</p>
+    <ol class="steps">
+      <li><h3>Sign in with Google</h3><p>One tap. If you already have a backup in your Drive, the app offers to restore it.</p></li>
+      <li><h3>Add your investments</h3><p>Record each contribution: date, partner, amount and which investment (e.g. Bus-0001). Or import your existing Excel file or Google Sheet.</p></li>
+      <li><h3>Record returns as they arrive</h3><p>Pick the investment, the months it covers and the amount received. The split preview shows each partner's share before you save.</p></li>
+      <li><h3>Close an investment when it ends</h3><p>Tick "With capital" on the final return. Everyone gets their capital back plus their share of profit, and the investment is locked.</p></li>
+      <li><h3>Check the numbers anytime</h3><p>Dashboard for the big picture, Summary for every partner and every payout. Tap any entry to edit or delete it safely.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap example">
+    <div>
+      <p class="kicker">Example</p>
+      <h2>A return of ৳19,800, split fairly</h2>
+      <p class="sub" style="margin-bottom:12px">Arif, Nadia and Samir own Bus-0002 together. On the day the return arrives, Arif holds half the
+        capital and the other two hold a quarter each. Investment does the maths, and the total always matches.</p>
+      <p class="sub" style="margin:0">If Samir had joined <em>after</em> that day, he would get nothing from this return, which is exactly
+        what's fair.</p>
+    </div>
+    <table>
+      <thead><tr><th>Partner</th><th class="n">Capital share</th><th class="n">Payout</th></tr></thead>
+      <tbody>
+        <tr><td>Arif</td><td class="n">50%</td><td class="n">৳9,900.00</td></tr>
+        <tr><td>Nadia</td><td class="n">25%</td><td class="n">৳4,950.00</td></tr>
+        <tr><td>Samir</td><td class="n">25%</td><td class="n">৳4,950.00</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td class="n">100%</td><td class="n">৳19,800.00</td></tr></tfoot>
+    </table>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap center">
+    <p class="kicker">Made for</p>
+    <h2>Anyone who invests together</h2>
+    <p class="sub">If more than one person puts money into the same thing, Investment keeps it fair.</p>
+    <ul class="who">
+      <li>🚌 Bus &amp; transport owners</li><li>🏪 Shop &amp; small business partners</li><li>👨‍👩‍👧 Family investments</li>
+      <li>🤝 Friends pooling money</li><li>🏠 Shared property &amp; rentals</li><li>🚜 Farm &amp; equipment co-owners</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="privacy">
+      <svg class="shield" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <div>
+        <h2>Your money, your data</h2>
+        <p>Records stay on your phone. Backups go to <strong>your own</strong> Google Drive, and the app can only see the
+          file it creates there. No ads, no tracking, and the developer never receives your data.</p>
+        <p><a href="privacy-policy/">Read the privacy policy →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap">
+    <p class="kicker">FAQ</p>
+    <h2>Questions</h2>
+    <div style="margin-top:20px">
+      <details><summary>Is it free?</summary><p>Yes. Investment is free to download and use, and it will stay free.</p></details>
+      <details><summary>Is there an iPhone version?</summary><p>Not yet. Investment is for Android phones (Android 8.0 or newer).</p></details>
+      <details><summary>What happens if I lose my phone?</summary><p>Install the app on your new phone, sign in with the same Google account and restore your backup from Google Drive in one tap.</p></details>
+      <details><summary>Can the developer see my data?</summary><p>No. The developer runs no servers. Your data is on your phone and in your own Google Drive only.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Help shape Investment</h2>
+    <p class="sub" style="margin-left:auto;margin-right:auto">The app is in closed testing on Google Play. Join as a tester, try it with your own
+      partnership, and tell us what you think.</p>
+    <div class="btns"><a class="btn navy" href="invite/tester/">Become a tester</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Investment · Android app</span>
+    <span><a href="invite/tester/">Become a tester</a> · <a href="privacy-policy/">Privacy policy</a> ·
+      <a href="mailto:towfiq106@gmail.com">towfiq106@gmail.com</a></span>
+  </div>
+</footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
+  <button class="x" type="button" aria-label="Close">&#10005;</button>
+  <button class="lp" type="button" aria-label="Previous screenshot">&#8249;</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="ln" type="button" aria-label="Next screenshot">&#8250;</button>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('shots');
+  if (!root) return;
+  var track = root.querySelector('.track');
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+  var dotsBox = root.querySelector('.dots');
+  var n = slides.length, cur = 0, timer = null, dragX = null, dragDx = 0, downSlide = -1;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('on');
+
+  slides.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Screenshot ' + (i + 1) + ': ' + s.querySelector('figcaption').textContent);
+    b.addEventListener('click', function () { go(i); restart(); });
+    dotsBox.appendChild(b);
+
+  });
+  var dots = dotsBox.children;
+
+  function size() {
+    var vw = track.clientWidth;
+    var w = Math.max(170, Math.min(280, vw * (vw < 600 ? 0.56 : 0.24)));
+    root.style.setProperty('--w', w + 'px');
+    root.style.setProperty('--h', Math.round(w * 16 / 9 + 48) + 'px');
+    render();
+  }
+
+  // Offset of slide i from the current one, wrapped to -n/2..n/2 so the ring has no ends.
+  function offset(i) {
+    var o = (i - cur) % n;
+    if (o > n / 2) o -= n;
+    if (o < -n / 2) o += n;
+    return o;
+  }
+
+  function render() {
+    var w = parseFloat(getComputedStyle(root).getPropertyValue('--w')) || 270;
+    var drag = dragX === null ? 0 : dragDx / w;
+    slides.forEach(function (s, i) {
+      var o = offset(i) + drag, a = Math.abs(o);
+      var x = o * w * 0.62, sc = Math.max(0.55, 1 - a * 0.17), ry = Math.max(-40, Math.min(40, -o * 22));
+      s.style.transform = 'translateX(' + x + 'px) perspective(1000px) rotateY(' + ry + 'deg) scale(' + sc + ')';
+      s.style.zIndex = String(100 - Math.round(a * 10));
+      s.style.opacity = a > 2.6 ? '0' : String(1 - a * 0.22);
+      s.style.filter = a > 0.5 ? 'saturate(.7) brightness(.92)' : 'none';
+      var on = i === cur;
+      s.classList.toggle('active', on);
+      s.setAttribute('aria-hidden', on ? 'false' : 'true');
+      dots[i].setAttribute('aria-current', on ? 'true' : 'false');
+    });
+  }
+
+  function go(i) { cur = ((i % n) + n) % n; render(); }
+  function next() { go(cur + 1); }
+  function prev() { go(cur - 1); }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); if (!reduce && (!lb || lb.hidden)) timer = setInterval(next, 3500); }
+
+  root.querySelector('.next').addEventListener('click', function () { next(); restart(); });
+  root.querySelector('.prev').addEventListener('click', function () { prev(); restart(); });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { next(); restart(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { prev(); restart(); e.preventDefault(); }
+  });
+
+  // Swipe / drag
+  track.addEventListener('pointerdown', function (e) {
+    var hit = e.target.closest ? e.target.closest('.slide') : null;
+    downSlide = hit ? slides.indexOf(hit) : -1;
+    dragX = e.clientX; dragDx = 0; track.classList.add('drag'); stop();
+    if (track.setPointerCapture) track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', function (e) {
+    if (dragX === null) return;
+    dragDx = e.clientX - dragX; render();
+  });
+  function end() {
+    if (dragX === null) return;
+    var w = parseFloat(getComputedStyle(root).getPropertyValue('--w')) || 270;
+    if (Math.abs(dragDx) < 6) {
+      // A tap: the centre screenshot opens full size, a side one moves to the centre.
+      dragX = null; track.classList.remove('drag'); render();
+      if (downSlide === cur) openLb(cur); else if (downSlide >= 0) { go(downSlide); restart(); } else restart();
+      return;
+    }
+    var steps = Math.round(-dragDx / (w * 0.62));
+    if (steps === 0 && Math.abs(dragDx) > 40) steps = dragDx < 0 ? 1 : -1;
+    dragX = null; track.classList.remove('drag');
+    go(cur + steps); restart();
+  }
+  track.addEventListener('pointerup', end);
+  track.addEventListener('pointercancel', function () {
+    // The browser took over (e.g. vertical page scroll): not a tap and not a swipe.
+    if (dragX === null) return;
+    dragX = null; dragDx = 0; track.classList.remove('drag'); render(); restart();
+  });
+
+  // Pause while the visitor is looking or interacting, and when the tab is hidden.
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', restart);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', restart);
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : restart(); });
+
+
+  // Lightbox
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption');
+  var lbIdx = 0, lbX = null, lastFocus = null;
+  function showLb(i) {
+    lbIdx = ((i % n) + n) % n;
+    var src = slides[lbIdx].querySelector('img');
+    lbImg.src = src.getAttribute('src'); lbImg.alt = src.alt;
+    lbCap.textContent = (lbIdx + 1) + ' / ' + n + ' · ' + slides[lbIdx].querySelector('figcaption').textContent;
+  }
+  function openLb(i) {
+    lastFocus = document.activeElement; stop(); showLb(i);
+    lb.hidden = false; lb.classList.add('open'); document.body.classList.add('lb-lock');
+    lb.querySelector('.x').focus();
+  }
+  function closeLb() {
+    lb.classList.remove('open'); lb.hidden = true; document.body.classList.remove('lb-lock');
+    go(lbIdx); restart(); if (lastFocus) lastFocus.focus();
+  }
+  lb.querySelector('.x').addEventListener('click', closeLb);
+  lb.querySelector('.lp').addEventListener('click', function () { showLb(lbIdx - 1); });
+  lb.querySelector('.ln').addEventListener('click', function () { showLb(lbIdx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowRight') showLb(lbIdx + 1);
+    else if (e.key === 'ArrowLeft') showLb(lbIdx - 1);
+  });
+  lbImg.addEventListener('pointerdown', function (e) { lbX = e.clientX; });
+  lbImg.addEventListener('pointerup', function (e) {
+    if (lbX === null) return;
+    var dx = e.clientX - lbX; lbX = null;
+    if (Math.abs(dx) > 40) showLb(lbIdx + (dx < 0 ? 1 : -1));
+  });
+  track.addEventListener('keydown', function (e) { if (e.key === 'Enter') openLb(cur); });
+
+  window.addEventListener('resize', size);
+  size();
+  restart();
+})();
+</script>
 </body>
 </html>
