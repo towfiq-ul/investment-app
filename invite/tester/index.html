@@ -44,9 +44,21 @@
   .bar nav { display:flex; gap:20px; }
   .bar nav a { color:#cfd9e6; text-decoration:none; font-size:.95rem; }
   .bar nav a:hover { color:#fff; }
-  .bar .mini { display:none; background:var(--gold); color:#18365D; font-weight:700; font-size:.88rem;
-               padding:7px 14px; border-radius:8px; text-decoration:none; }
-  @media (max-width:700px) { .bar nav { display:none; } .bar .mini { display:inline-block; } }
+  .bar .menu-btn { display:none; align-items:center; justify-content:center; width:42px; height:42px; padding:0;
+                   background:transparent; border:1px solid rgba(255,255,255,.22); border-radius:10px; color:#fff; cursor:pointer; }
+  .bar .menu-btn svg { width:22px; height:22px; }
+  .bar .menu-btn .x { display:none; }
+  .bar.open .menu-btn .x { display:block; } .bar.open .menu-btn .lines { display:none; }
+  .bar nav .nav-beta { display:none; }
+  @media (max-width:700px) {
+    .bar .menu-btn { display:inline-flex; }
+    .bar nav { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0;
+               background:rgba(15,37,66,.98); padding:4px 16px 18px; box-shadow:0 14px 28px rgba(0,0,0,.28); }
+    .bar.open nav { display:flex; }
+    .bar nav a { padding:13px 4px; font-size:1rem; border-bottom:1px solid rgba(255,255,255,.08); }
+    .bar nav .nav-beta { display:block; margin-top:14px; border:0; border-radius:10px; text-align:center;
+                         background:var(--gold); color:#18365D; font-weight:700; }
+  }
 
   /* Hero */
   .hero { background:linear-gradient(160deg,var(--navy-2),var(--navy) 60%,#1f4677); color:#fff; padding:56px 0 0; overflow:hidden; }
@@ -227,14 +239,18 @@
   <circle cx="42" cy="24" r="2.4" fill="none" stroke="#18365D" stroke-width="1.4"/>
   <path d="M42 18.5c-4 0-7-2.5-7-6.5 4 0 7 2.5 7 6.5zM42 17.5c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" fill="#F2B544"/>
 </svg>Investment</a>
-    <nav>
+    <nav id="site-nav">
       <a href="../../#benefits">Benefits</a>
       <a href="../../#results">Results</a>
-      <a href="../../#screens">Screens</a>
+      <a href="../../#demo">Try it</a>
       <a href="../../#how">How it works</a>
       <a href="../../#faq">FAQ</a>
+      <a class="nav-beta" href="./">Become a beta user</a>
     </nav>
-    <a class="mini" href="./">Become a beta user</a>
+    <button type="button" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+      <svg class="lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -318,5 +334,17 @@
     <small class="tm">Google Play and the Google Play logo are trademarks of Google LLC.</small>
   </div>
 </footer>
+<script>
+(function () {
+  var bar = document.querySelector('header.bar');
+  if (!bar) return;
+  var btn = bar.querySelector('.menu-btn');
+  function set(open) { bar.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  btn.addEventListener('click', function () { set(!bar.classList.contains('open')); });
+  bar.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  document.addEventListener('click', function (e) { if (!bar.contains(e.target)) set(false); });
+})();
+</script>
 </body>
 </html>
