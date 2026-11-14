@@ -44,7 +44,7 @@
 <div><p class="app">Investment</p><h1>Privacy Policy</h1></div>
 </header>
 <p class="meta">Investment (Android app)<br>
-Effective date: 13 November 2026</p>
+Effective date: 14 November 2026</p>
 
 <p class="box">In short: your investment records stay on your phone. If you turn on backup, a copy is
 saved to <strong>your own</strong> Google Drive. The developer runs no servers, receives none of your
@@ -60,25 +60,43 @@ the choices you have. It applies only to this app.</p>
 <tr><td>Google account name, email address and profile photo (from Google Sign-In)</td>
     <td>To show who is signed in and to connect to your Google Drive for backups</td>
     <td>On your phone only</td></tr>
-<tr><td>Investment records you enter or import: investment names, partner names, contribution amounts, returns, dates, notes</td>
+<tr><td>Investment records you enter: investment names, partner names, contribution amounts, returns, dates, notes</td>
     <td>The core function of the app: tracking investments and splitting returns</td>
     <td>On your phone (local database); in your Google Drive if backup is on</td></tr>
-<tr><td>A spreadsheet you choose to import (an .xlsx file, or a Google Sheet picked through Android's file picker)</td>
-    <td>To copy your existing records into the app</td>
-    <td>Read on your phone; the app does not upload it anywhere</td></tr>
 <tr><td>App settings (backup on/off, app lock on/off, review-prompt dates)</td>
     <td>To remember your choices</td>
     <td>On your phone only</td></tr>
 </table>
 </div>
 <p>The app does <strong>not</strong> collect your location, contacts, photos, messages, call logs, device identifiers,
-advertising ID, or browsing data. It does not ask for any Android permission besides internet access.</p>
+advertising ID, or browsing data. It asks for no Android permission that needs your approval (no storage, camera,
+contacts or location). It only uses permissions Android grants automatically at install: internet and network state
+(for Google sign-in and Drive backup), running a backup in the background after a change or a restart, and the
+fingerprint / screen-lock prompt for the app lock.</p>
 
-<h2>2. Google Drive backup</h2>
+<h2>2. Google access and Drive backup</h2>
 <p>When you turn on backup, the app saves a single file, <code>investment-backup.json</code>, to your Google Drive
-and can restore it later. The app uses the limited <code>drive.file</code> permission, which only lets it see files it
-created itself. It cannot see or change any other file in your Drive. The backup is stored in your Google account
-under Google's own terms; the developer has no access to it.</p>
+and can restore it later. The backup is stored in your Google account under Google's own terms; the developer has
+no access to it.</p>
+<p>The app asks Google for the smallest access it needs. Google's consent screen uses fixed wording for each kind
+of access, so it lists some actions the app never takes:</p>
+<div class="wrap">
+<table>
+<tr><th>Access Google asks you to allow</th><th>What the app actually does</th></tr>
+<tr><td><strong>Google Drive</strong> (<code>drive.file</code>): files you create or open with this app. Google lists
+    seeing, uploading, downloading, deleting, sharing and organising those files</td>
+    <td>Only creates, updates, finds and reads its own backup file. It never deletes, shares, moves or renames
+    files, and it cannot see any other file in your Drive</td></tr>
+<tr><td><strong>Your name and profile picture</strong> (<code>profile</code>). Google also mentions gender, preferred
+    languages and other public information</td>
+    <td>Uses only your name and photo, to show who is signed in. It never reads your gender, languages or other
+    profile details</td></tr>
+<tr><td><strong>Your email address</strong> (<code>email</code>)</td>
+    <td>Shows which account is signed in and picks that account for Drive backup</td></tr>
+<tr><td><strong>Associate you with your personal info on Google</strong> (<code>openid</code>)</td>
+    <td>Lets you sign in with your Google account. Nothing else</td></tr>
+</table>
+</div>
 
 <h2>3. Fingerprint / app lock</h2>
 <p>If you turn on the app lock, unlocking is handled entirely by Android's system biometric prompt. The app never
